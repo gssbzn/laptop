@@ -7,18 +7,16 @@ It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
+This fork and branch in particular contains modifications to the original https://github.com/thoughtbot/laptop, the main difference is the removal of Ruby, Datbases and Heroku as well as adding some extra asdf plugins for the current work I do, Java, Go, Bazel.
+
 Requirements
 ------------
 
 We support:
 
-* macOS Mavericks (10.9)
-* macOS Yosemite (10.10)
-* macOS El Capitan (10.11)
-* macOS Sierra (10.12)
-* macOS High Sierra (10.13)
 * macOS Mojave (10.14)
 * macOS Catalina (10.15)
+* macOS Big Sur (11)
 
 Older versions may work but aren't regularly tested.
 Bug reports for older versions are welcome.
@@ -29,7 +27,7 @@ Install
 Download the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+curl --remote-name https://raw.githubusercontent.com/gssbzn/laptop/mongodb/mac
 ```
 
 Review the script (avoid running scripts you haven't read!):
@@ -49,10 +47,6 @@ Optionally, review the log:
 ```sh
 less ~/laptop.log
 ```
-
-Optionally, [install thoughtbot/dotfiles][dotfiles].
-
-[dotfiles]: https://github.com/thoughtbot/dotfiles#install
 
 Debugging
 ---------
@@ -74,8 +68,6 @@ macOS tools:
 
 Unix tools:
 
-* [Universal Ctags] for indexing files for vim tab completion
-* [Git] for version control
 * [OpenSSL] for Transport Layer Security (TLS)
 * [RCM] for managing company and personal dotfiles
 * [The Silver Searcher] for finding things in files
@@ -83,21 +75,12 @@ Unix tools:
 * [Watchman] for watching for filesystem events
 * [Zsh] as your shell
 
-[Universal Ctags]: https://ctags.io/
-[Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
 [RCM]: https://github.com/thoughtbot/rcm
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
 [Tmux]: http://tmux.github.io/
 [Watchman]: https://facebook.github.io/watchman/
 [Zsh]: http://www.zsh.org/
-
-Heroku tools:
-
-* [Heroku CLI] and [Parity] for interacting with the Heroku API
-
-[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
-[Parity]: https://github.com/thoughtbot/parity
 
 GitHub tools:
 
@@ -109,31 +92,32 @@ Image tools:
 
 * [ImageMagick] for cropping and resizing images
 
+[ImageMagick]: http://www.imagemagick.org/
+
 Programming languages, package managers, and configuration:
 
 * [asdf-vm] for managing programming language versions
-* [Bundler] for managing Ruby libraries
-* [Node.js] and [npm], for running apps and installing JavaScript packages
-* [Ruby] stable for writing general-purpose code
+* [Node.js] and [npm] asdf plugin
+* [Java] asdf plugin
+* [golang] asdf plugin
+* [Bazel] asdf plugin
 * [Yarn] for managing JavaScript packages
 
-[Bundler]: http://bundler.io/
-[ImageMagick]: http://www.imagemagick.org/
 [Node.js]: http://nodejs.org/
 [npm]: https://www.npmjs.org/
 [asdf-vm]: https://github.com/asdf-vm/asdf
-[Ruby]: https://www.ruby-lang.org/en/
+[Java]: https://www.java.com/en/
+[golang]: https://golang.org/
+[Bazel]: https://bazel.build/
 [Yarn]: https://yarnpkg.com/en/
 
 Databases:
 
-* [Postgres] for storing relational data
-* [Redis] for storing key-value data
+* [mongshell] for storing relational data
+* [MongoDB] asdf plugin
 
-[Postgres]: http://www.postgresql.org/
-[Redis]: http://redis.io/
-
-It should take less than 15 minutes to install (depends on your machine).
+[mongoshell]: https://docs.mongodb.com/mongodb-shell/
+[MongoDB]: https://docs.mongodb.com/manual/
 
 Customize in `~/.laptop.local`
 ------------------------------
@@ -219,18 +203,3 @@ It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
-
-About thoughtbot
-----------------
-
-![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
-
-Laptop is maintained and funded by thoughtbot, inc.
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
-
-We are passionate about open source software.
-See [our other projects][community].
-We are [available for hire][hire].
-
-[community]: https://thoughtbot.com/community?utm_source=github
-[hire]: https://thoughtbot.com?utm_source=github
