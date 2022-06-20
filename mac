@@ -135,6 +135,7 @@ add_or_update_asdf_plugin "java" "https://github.com/halcyon/asdf-java.git"
 add_or_update_asdf_plugin "python" "https://github.com/danhper/asdf-python.git"
 add_or_update_asdf_plugin "mongodb" "https://github.com/sylph01/asdf-mongodb.git"
 add_or_update_asdf_plugin "bazel" "https://github.com/rajatvig/asdf-bazel.git"
+add_or_update_asdf_plugin "poetry" "https://github.com/asdf-community/asdf-poetry.git"
 
 install_asdf_language() {
 	local language="$1"
